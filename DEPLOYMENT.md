@@ -26,7 +26,7 @@ This guide provides exact steps to deploy the Tech You website (Frontend + Backe
 6. Add Environment Variables:
    - `MONGODB_URI`: Your MongoDB connection string from step 1.
    - `NODE_ENV`: `production`
-   - `GEMINI_API_KEY`: Your Gemini API key for the chatbot.
+   - `VITE_GROQ_API_KEY`: Your Groq API key for the chatbot.
 7. Click **Create Web Service**. Render will build and deploy your backend.
 8. Copy the Render URL (e.g., `https://tech-you-backend.onrender.com`).
 
@@ -45,7 +45,7 @@ This guide provides exact steps to deploy the Tech You website (Frontend + Backe
    - **Output Directory**: `dist`
 5. Add Environment Variables:
    - `VITE_API_URL`: The URL of your backend (if separated).
-   - `GEMINI_API_KEY`: Your Gemini API key.
+   - `VITE_GROQ_API_KEY`: Your Groq API key.
 6. Click **Deploy**.
 
 **To deploy the full-stack app to Render (Recommended for this setup):**
