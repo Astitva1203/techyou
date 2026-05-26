@@ -44,10 +44,11 @@ This guide provides exact steps to deploy the Tech You website (Frontend + Backe
    - **Framework Preset**: `Vite`
    - **Build Command**: `npm run build`
    - **Output Directory**: `dist`
-5. Add Environment Variables:
+5. Ensure `/api/*` is handled by Vercel Serverless Functions (this repo includes `api/chat.ts`).
+6. Add Environment Variables:
    - `GROQ_API_KEY`: Your Groq API key.
    - `GROQ_MODEL`: Optional override (default: `llama-3.1-8b-instant`).
-6. Click **Deploy**.
+7. Click **Deploy**.
 
 **To deploy the full-stack app to Render (Recommended for this setup):**
 

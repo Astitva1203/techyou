@@ -63,15 +63,24 @@ export function Chatbot() {
         body: JSON.stringify({ messages: apiMessages }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch response from server");
+      const responseText = await response.text();
+      let data: { message?: string; error?: string } | null = null;
+      try {
+        data = responseText ? JSON.parse(responseText) : null;
+      } catch {
+        data = null;
       }
 
-      const data = await response.json();
+      if (!response.ok) {
+        const fallback = responseText?.includes("<html")
+          ? "API route returned HTML. Check Vercel routes for /api."
+          : "Failed to fetch response from server";
+        throw new Error(data?.error || fallback);
+      }
       
       setMessages((prev) => [
         ...prev,
-        { id: Date.now().toString(), role: "assistant", content: data.message || data.error },
+        { id: Date.now().toString(), role: "assistant", content: data?.message || data?.error || "" },
       ]);
     } catch (error) {
       console.error("Chat error:", error);
@@ -80,7 +89,10 @@ export function Chatbot() {
         {
           id: Date.now().toString(),
           role: "assistant",
-          content: "Sorry, I'm having trouble connecting to the server right now.",
+          content:
+            error instanceof Error
+              ? error.message
+              : "Sorry, I'm having trouble connecting to the server right now.",
         },
       ]);
     } finally {
