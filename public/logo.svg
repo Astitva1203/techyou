@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 768" role="img" aria-label="Tech You logo">
+  <defs>
+    <linearGradient id="neon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#9D50BB" />
+    </linearGradient>
+    <filter id="outer-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="768" height="768" fill="#09090F" />
+
+  <g transform="translate(384 270)">
+    <circle r="170" fill="none" stroke="url(#neon-gradient)" stroke-width="4" filter="url(#outer-glow)" />
+    <circle r="170" fill="none" stroke="url(#neon-gradient)" stroke-width="2" />
+    <text
+      y="60"
+      font-family="Space Grotesk, Inter, Arial, sans-serif"
+      font-weight="800"
+      font-size="160"
+      text-anchor="middle"
+      letter-spacing="-8"
+      fill="url(#neon-gradient)"
+      filter="url(#outer-glow)"
+    >
+      TY
+    </text>
+  </g>
+
+  <g transform="translate(384 552)">
+    <text
+      x="376"
+      y="0"
+      text-anchor="end"
+      font-family="Space Grotesk, Inter, Arial, sans-serif"
+      font-weight="800"
+      font-size="120"
+      fill="#FFFFFF"
+    >
+      Tech
+    </text>
+    <text
+      x="392"
+      y="0"
+      text-anchor="start"
+      font-family="Space Grotesk, Inter, Arial, sans-serif"
+      font-weight="800"
+      font-size="120"
+      fill="url(#neon-gradient)"
+    >
+      You
+    </text>
+  </g>
+
+  <g transform="translate(384 625)">
+    <line x1="-270" y1="-8" x2="-180" y2="-8" stroke="#00D2FF" stroke-width="4" />
+    <text
+      font-family="Space Grotesk, Inter, Arial, sans-serif"
+      font-weight="500"
+      font-size="26"
+      text-anchor="middle"
+      fill="#FFFFFF"
+      letter-spacing="1"
+    >
+      We believe in Technology
+    </text>
+    <line x1="180" y1="-8" x2="270" y2="-8" stroke="#9D50BB" stroke-width="4" />
+  </g>
+</svg>
