@@ -73,8 +73,8 @@ export function Chatbot() {
 
       if (!response.ok) {
         const fallback = responseText?.includes("<html")
-          ? "API route returned HTML. Check Vercel routes for /api."
-          : "Failed to fetch response from server";
+          ? `API route returned HTML (status ${response.status}). Check Vercel routes for /api.`
+          : `Request failed with status ${response.status}`;
         throw new Error(data?.error || fallback);
       }
       
